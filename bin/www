@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+var debug = require('debug')('flapper-news');
+var app = require('../app');
+
+var port = process.env.PORT || 3000; 
+
+var server = app.listen(port);
+console.log('Listening on PORT ' + port);
