@@ -2,7 +2,6 @@
   "name": "flapper-news",
   "version": "0.0.0",
   "author": "Ceberous",
-  "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -22,20 +21,3 @@
 }
 
 
-{
-  "name"         : "node-todo",
-  "version"      : "0.0.0",
-  "description"  : "Simple todo application.",
-  "main"         : "server.js",
-  "author"       : "Ceberous",
-  "dependencies" : {
-    "express"    : "~4.7.2",
-    "mongoose"   : "~3.6.2",
-    "morgan"   : "~1.2.2",
-    "body-parser": "~1.5.2",
-    "method-override": "~2.1.2"
-  },
-  "engines" : {
-    "node" : "0.10.33"
-  }
-}
