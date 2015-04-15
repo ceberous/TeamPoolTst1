@@ -20,6 +20,14 @@ app.factory('posts', ['$http', function($http){
 			post.upvotes++;
 		});
 	};
+	o.downvote = function(post) {
+		return $http.put('/posts/' + post._id + '/downvote')
+			.success(function(data) {
+				post.upvotes--;
+			})
+		;
+	};
+
 	o.get = function(id) {
 		return $http.get('/posts/' + id).then(function(res) {
 			return res.data;
@@ -80,8 +88,11 @@ app.controller('MainCtrl', ['$scope', 'posts' ,
 			$scope.title = '';
 			$scope.link = '';
 		};
-		$scope.incrementUpvotes = function(post) {
+		$scope.incrementVote = function(post) {
 			posts.upvote(post);
+		};
+		$scope.decrementVote = function(post) {
+			posts.downvote(post);
 		};
 	}
 

@@ -66,6 +66,14 @@ router.put('/posts/:post/upvote', function(req, res, next) {
 	});
 });
 
+router.put('/posts/:post/downvote' , function(req ,res ,next) {
+	req.post.upvote(function(err , post) {
+		if (err) {return next(err);}
+
+		res.json(post);
+	})
+});
+
 router.put('/posts/:post/comments/:comment/upvote', function(req, res, next) {
 	req.comment.upvote(function(err, comment) {
 		if(err) {
